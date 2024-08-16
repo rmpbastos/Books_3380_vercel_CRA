@@ -147,6 +147,8 @@ locally and live
 6 - Create the /delete endpoint in index.js(server)
 *Push to github and Deploy (change axios url)
 
+- Create endpoints to get by id and edit
+
 
 
 
@@ -155,3 +157,5 @@ locally and live
 - BookList.jsx
 - BookCard.jsx
 - AddBook.jsx
+- EditBook.jsx 2x
+- ShowBook.jsx

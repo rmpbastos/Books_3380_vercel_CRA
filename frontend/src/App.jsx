@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import BookList from './components/BookList';
 import AddBook from './components/AddBook';
+import ShowBook from './components/ShowBook';
+import EditBook from './components/EditBook';
 
 
 
@@ -19,6 +21,8 @@ function App() {
       <Routes>
         <Route path='/' element={<BookList />} />
         <Route path="/create-book" element={<AddBook />} />
+        <Route path="/show-book/:id" element={<ShowBook />} />
+        <Route path="/edit-book/:id" element={<EditBook />} />
       </Routes>
     </BrowserRouter>
 
