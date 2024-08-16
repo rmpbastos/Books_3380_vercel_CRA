@@ -17,9 +17,17 @@ app.use(cors());
 
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://finaluser:DZNSGYJNFP6gBeLl@cluster0.7rlxnxb.mongodb.net/finalPractice?retryWrites=true&w=majority&appName=Cluster0');
+// MongoDB connection
+const MONGO_URI = 'mongodb+srv://finaluser:DZNSGYJNFP6gBeLl@cluster0.7rlxnxb.mongodb.net/finalPractice?retryWrites=true&w=majority&appName=Cluster0'
+
+mongoose.connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => console.log("MongoDB connected"))
+.catch(err => console.error(err));
 
 
+// GET all books
 app.get("/", async (req, res) => {
     try {
         const books = await Book.find();
@@ -44,6 +52,19 @@ app.post('/add', async (req, res) => {
         res.json('Book added!');
     } catch (err) {
         res.status(400).json({ error: err.message })
+    }
+});
+
+// DETETE a book
+app.delete('/:id', async (req, res) => {
+    try {
+        const book = await Book.findByIdAndDelete(req.params.id);
+        if (!book) {
+            return res.status(404).json({ error: 'Book not found' });
+        }
+        res.json({ message: 'Book deleted successfully' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
     }
 });
 

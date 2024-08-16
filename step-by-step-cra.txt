@@ -127,7 +127,7 @@ app.use(cors(
 
 ** After this point, the deployment should be working. Continue building the app.
 ** I can keep using the Vercel api URL in my axios requests and see it working 
-in production (Vercel frontend URL)
+locally and live
 
 --------------------
 --------------------
@@ -144,6 +144,8 @@ in production (Vercel frontend URL)
 5 - Create the /add endpoint in index.js(server)
 *Push to github and Deploy (change axios url)
 
+6 - Create the /delete endpoint in index.js(server)
+*Push to github and Deploy (change axios url)
 
 
 
