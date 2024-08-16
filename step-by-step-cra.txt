@@ -20,6 +20,9 @@ $ npm start
 
 $ npm install axios react-router-dom bootstrap
 
+- Add the following import statement to index.js(frontend) (or App.jsx)
+        import 'bootstrap/dist/css/bootstrap.min.css';
+
 --------------------
 4 - Edit App.jsx just to check if the deployment works
 
@@ -92,14 +95,48 @@ To test the deployment early, test it at this point
 
 1 - Deploy the server:
 In Vercel:
-- select the repository and change the Project Name to end with -api
+- Select the repository and change the Project Name to end with -api
 - In Root Directory, select server
 - Click Deploy
 
 After this deploy, I'll see the json content retrieved from the server
 
-- Copy the URL of the vercel api site
+- Copy the URL of the vercel API site
 
 2 - Deploy the Frontend:
 In App.jsx:
-- Change http://localhost:5000 for the vercer url (the complete link), ex: https://books-3380-vercel-api.vercel.app/
+- Change http://localhost:5000 for the vercel url copied earlier 
+(the complete link), ex: https://books-3380-vercel-api.vercel.app  *NO SLASH
+
+In Vercel:
+- Create a new project, select the same repository, 
+and change the Project Name to end with -frontent
+- In Root Directory, select frontend
+- Click Deploy
+
+- Copy the URL of the vercel api site
+- Paste this URL in index.js, like:
+app.use(cors(
+    {
+        // The frontend URL goes here
+        origin: ["https://books-3380-vercel-frontend.vercel.app"],  *NO SLASH
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+));
+
+** After this point, the deployment should be working. Continue building the app.
+** I can keep using the Vercel api URL in my axios request and see it working 
+
+--------------------
+--------------------
+1 - Create BookList.jsx inside src/components
+
+2 - Create BookCard.jsx inside src/components
+
+3 - Import style.css at index.js(frontend) and comment out other css from this file and App.jsx
+
+
+**IN THE END, make sure all 'http://localhost:5000' were changed by the Vercel backend endpoint at:
+- BookList.jsx
+- BookCard.jsx

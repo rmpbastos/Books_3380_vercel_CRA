@@ -8,7 +8,8 @@ app.use(cors());
 
 // app.use(cors(
 //     {
-//         origin: ["https://deploy-mern-frontend.vercel.app"],
+//         // The frontend URL goes here
+//         origin: ["https://books-3380-vercel-frontend.vercel.app"],
 //         methods: ["POST", "GET"],
 //         credentials: true
 //     }
@@ -27,6 +28,8 @@ app.get("/", async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 });
+
+
 
 
 
