@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import BookList from './components/BookList';
+import AddBook from './components/AddBook';
 
 
 
@@ -17,6 +18,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<BookList />} />
+        <Route path="/create-book" element={<AddBook />} />
       </Routes>
     </BrowserRouter>
 

@@ -126,17 +126,28 @@ app.use(cors(
 ));
 
 ** After this point, the deployment should be working. Continue building the app.
-** I can keep using the Vercel api URL in my axios request and see it working 
+** I can keep using the Vercel api URL in my axios requests and see it working 
+in production (Vercel frontend URL)
 
 --------------------
 --------------------
-1 - Create BookList.jsx inside src/components
+1 - Import style.css at index.js(frontend) and comment out other css from this file and App.jsx
 
-2 - Create BookCard.jsx inside src/components
+2 - Create BookList.jsx inside src/components
 
-3 - Import style.css at index.js(frontend) and comment out other css from this file and App.jsx
+3 - Create BookCard.jsx inside src/components
+*Push to github and Deploy (change axios url)
+
+4 - Create AddBook.jsx
+- Add Route to App.jsx
+
+5 - Create the /add endpoint in index.js(server)
+*Push to github and Deploy (change axios url)
+
+
 
 
 **IN THE END, make sure all 'http://localhost:5000' were changed by the Vercel backend endpoint at:
 - BookList.jsx
 - BookCard.jsx
+- AddBook.jsx

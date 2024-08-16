@@ -29,6 +29,24 @@ app.get("/", async (req, res) => {
     }
 });
 
+// POST a new book
+app.post('/add', async (req, res) => {
+    const { title, author, description } = req.body;
+
+    try {
+        const newBook = new Book({
+            title,
+            author,
+            description,
+        });
+
+        await newBook.save();
+        res.json('Book added!');
+    } catch (err) {
+        res.status(400).json({ error: err.message })
+    }
+});
+
 
 
 
