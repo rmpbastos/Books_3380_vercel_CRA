@@ -1,0 +1,46 @@
+1 - Create a frontend and server folder
+
+--------------------
+--------------------
+FRONTEND
+--------------------
+1 - Set up the front end with Create React App
+
+$ npx create-react-app .
+
+--------------------
+2 - Start the React Development Server
+
+- Start the React development server to ensure everything is working:
+
+$ npm start
+
+--------------------
+3 - Install Frontend Dependencies
+
+$ npm install axios react-router-dom bootstrap
+
+--------------------
+--------------------
+FRONTEND
+--------------------
+1 - Set Up the Server with Express
+
+- In the server folder:
+
+$ npm init -y
+
+--------------------
+2 - Install Server Dependencies
+
+$ npm install express mongoose cors dotenv nodemon
+
+--------------------
+3 - Create server file index.js (copy content)
+
+--------------------
+4 - Create the Book model
+
+server/models folder:
+
+- Create file Book.js (copy content)
